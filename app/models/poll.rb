@@ -1,9 +1,7 @@
 class Poll
   include Mongoid::Document
-  field :number, type: Float
-  field :title, type: String
-  field :directed_by, type: String
-  field :first_aired, type: Time
-
-  validates :number, uniqueness: true, presence: true
+  field :question, type: String
+  field :image_url, type: String
+  field :choice_one, type: String
+  field :choice_two, type: String
 end

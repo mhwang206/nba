@@ -58,7 +58,7 @@ development:
 test:
   sessions:
     default:
-      database: sass_time_test
+      database: nba_test
       hosts:
         - localhost:27017
       options:

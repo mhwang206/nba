@@ -1,7 +1,10 @@
 <div class="main">
 
-	<div class="logout">
+	<div class="logout">_one
 	<%= button_to "Log out", auths_path, method: :delete %>
+	</div>
+	<div class="create_poll">
+	<%= link_to "Create a poll", new_poll_path%>
 	</div>
 
 	<h1>Polls</h1>
@@ -9,17 +12,20 @@
 	Hello, <%= current_user ? current_user.username : "(not logged in)" %> 
 	</div>
 
-	<% @polls.each do |e| %>
 
-		<div class="episode">
-			<%= e.number %> -- <%= e.title %>
-			<%= link_to "X", e, {method: :delete} %>
-			<%= button_to "X", e, {method: :delete} %>
+	<% @polls.each do |f| %>
+		<div class="poll">
+			<%= image_tag(f.image_url, size: '310x178') %>
+			<br>
+			<%= f.question %>
+			<br>
+			<%= f.choice_one %>
+			<br>
+			<%= f.choice_two %>
 		</div>
-		<div class="details">
-			Directed by <%= e.directed_by %>. First aired on <%=e.first_aired.strftime '%B %d, %Y' %>.
-		</div>
-
 	<% end %>
 
+	
 </div>
+
+		

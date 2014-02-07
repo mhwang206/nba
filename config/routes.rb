@@ -4,10 +4,9 @@ resources :polls
 root 'polls#index'
 
 resources :users, only:[:index, :new, :create]
-
 delete "auths" => "auths#destroy"
-
 resources :auths, only:[:new, :create]
+
 
 get 'log_in' => 'auths#new', as: :login
 

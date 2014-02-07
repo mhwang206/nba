@@ -1,0 +1,25 @@
+<%= form_for @poll do |f| %>
+
+	<div>
+		<%= f.label :Question %>
+		<%= f.text_field :question %>
+	</div>
+	<div>
+		<%= f.label :Choice_1 %>
+		<%= f.text_field :choice_one %>
+	</div>
+	<div>
+		<%= f.label :Choice_2 %>
+		<%= f.text_field :choice_two %>
+	</div>
+	add another choice
+	<div>
+		<%= f.label :Image_Url %>
+		<%= f.text_field :image_url %>
+	</div>
+
+
+
+	<div><%= f.submit %></div>
+
+<% end %>
