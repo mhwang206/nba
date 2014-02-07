@@ -1,0 +1,25 @@
+<div class="main">
+
+	<div class="logout">
+	<%= button_to "Log out", auths_path, method: :delete %>
+	</div>
+
+	<h1>Polls</h1>
+	<div class ="welcome_msg">
+	Hello, <%= current_user ? current_user.username : "(not logged in)" %> 
+	</div>
+
+	<% @polls.each do |e| %>
+
+		<div class="episode">
+			<%= e.number %> -- <%= e.title %>
+			<%= link_to "X", e, {method: :delete} %>
+			<%= button_to "X", e, {method: :delete} %>
+		</div>
+		<div class="details">
+			Directed by <%= e.directed_by %>. First aired on <%=e.first_aired.strftime '%B %d, %Y' %>.
+		</div>
+
+	<% end %>
+
+</div>

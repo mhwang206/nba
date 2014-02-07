@@ -1,0 +1,46 @@
+// Place all the styles related to the episodes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$topwidth: 800px;
+$maincolor: #6f6;
+$mainfont: helvetica;
+
+.logout {
+	text-align: right;
+}
+
+.main {
+	background-color: #ecf0f1;
+	width: $topwidth / 960px * 100%;
+	height: 300px;
+	margin: 0 auto;
+	h1 {
+		text-align: center;
+		font-family: $mainfont;
+		padding-top: 20px;
+	}
+}
+
+.welcome_msg {
+	text-align: center;
+	font-size: 14px;
+	color: green;
+}
+
+.box{
+	padding: 5px;
+}
+
+.episode{
+	background-color: darken($maincolor, 30%);
+	border-top: 3px solid darken($maincolor, 60%);
+	margin: 15px 0px 0px;
+	@extend .box;
+}
+
+.details{
+	background-color: $maincolor;
+	border-bottom: 3px solid darken($maincolor, 60%);
+	@extend .box;
+}

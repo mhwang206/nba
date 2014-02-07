@@ -1,0 +1,19 @@
+<%# if current_user %>
+<!-- 	Whoa Nelly! You're already logged in!!
+ -->
+<%# end %>
+
+
+<body class="background_image">
+<div class="create_user">
+	<h1>Sign up with Email</h1>
+	<div class="sign_up_form">
+	<%=form_for @user do |f|%>
+		<%=f.text_field :username, :placeholder => "Email Address", :class=> "form-control" %><br>
+		<%=f.password_field :password, :placeholder => "Password", :class=> "form-control" %><br>
+	</div>
+
+		<%= f.submit "Sign up", :class=>"btn btn-success" %>		
+	<% end %>
+</div>
+</body>
