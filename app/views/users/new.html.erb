@@ -7,13 +7,14 @@
 <body class="background_image">
 <div class="create_user">
 	<h1>Sign up with Email</h1>
+	<div class="notice"><%= flash[:notice] %></div>
 	<div class="sign_up_form">
-	<%=form_for @user do |f|%>
-		<%=f.text_field :username, :placeholder => "Email Address", :class=> "form-control" %><br>
-		<%=f.password_field :password, :placeholder => "Password", :class=> "form-control" %><br>
+	<%=form_for @user do |user|%>
+		<%=user.text_field :username, :placeholder => "Email Address", :class=> "form-control" %><br>
+		<%=user.password_field :password, :placeholder => "Password", :class=> "form-control" %><br>
+		<%= user.submit "Sign up", :class=>"btn btn-success" %>
 	</div>
-
-		<%= f.submit "Sign up", :class=>"btn btn-success" %>		
 	<% end %>
+	<div>Already have an account? <%= link_to "Log in now!", new_auth_path %></div>
 </div>
 </body>

@@ -13,11 +13,12 @@ class AuthsController < ApplicationController
 	# Log them in!
 	def create
 		user = User.find_by(username: params[:user][:username])
-		if user.authenticated?(params[:user][:password])
+		if user != nil && user.authenticated?(params[:user][:password])
 			session[:user_id] = user.id
 			redirect_to polls_path
 		else
-			render action: 'new'
+			redirect_to new_auth_path
+			flash[:notice] = "Oops something went wrong. Try again!"
 		end
 	end
 

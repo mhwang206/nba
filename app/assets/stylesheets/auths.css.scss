@@ -1,17 +1,3 @@
-.background_image {
-	background-image: url("http://fc06.deviantart.net/fs20/f/2007/291/0/2/NBA_Team_Logos_Wallpaper_by_nbafan.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-
-/*.login {
-	border: 3px solid black;
-	width: 675px;
-	height: 374px;
-	text-align: center;
-}*/
-
 .create_user{
 text-align: center;
 background-color: rgba(255, 255, 255, 0.8);
@@ -35,5 +21,16 @@ z-index: 1;
 	width: 250px;	
 	text-align: center;
 }
+
+.notice {
+	color: red;
+}
+
+// .background_image {
+// 	background-image: url("http://fc06.deviantart.net/fs20/f/2007/291/0/2/NBA_Team_Logos_Wallpaper_by_nbafan.jpg");
+// 	background-size: cover;
+// 	background-repeat: no-repeat;
+// }
+
 
 

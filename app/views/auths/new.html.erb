@@ -1,21 +1,17 @@
 <body class="background_image">
 	<div class="login">
-		<h1>Got Opinion?</h1>
-		
-		<div class="login_form">
-		<%= form_for @user, {url:"/auths", method:"post"} do |user|%>
-		<%= user.text_field :username, :placeholder => "Your username", :class=> "form-control" %><br>
-		<%= user.password_field :password, :placeholder => "Your password", :class=>"form-control"  %><br>
-		</div>
-
-		<div class="login_button">
-		<%= user.submit "Log In", :class=>"btn btn-primary" %>
-		</div>
-		<%end%>
-		<br>
-		<div>
-		<%= button_to "Sign up with email", new_user_path, :class => "btn btn-success", :method => :get  %>
-		</div>	
+		<div><h1>Log in</h1></div>
+			<div class="notice"><%= flash[:notice] %></div>
+				<div class="login_form">
+					<%= form_for @user, {url:"/auths", method:"post"} do |user|%>
+					<%= user.text_field :username, :placeholder => "Your username", :class=> "form-control" %><br>
+					<%= user.password_field :password, :placeholder => "Your password", :class=>"form-control"  %><br>
+					<%= user.submit 'Log in', :class => "btn btn-success" %>
+					<%end%>
+				</div>
+				<div>
+					<%= link_to "Sign up now", new_user_path %>
+				</div>	
 	</div>
 <body>
 

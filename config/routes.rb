@@ -1,8 +1,8 @@
 SassTime::Application.routes.draw do
 
-resources :polls
 root 'polls#index'
 
+resources :polls
 resources :users, only:[:index, :new, :create]
 delete "auths" => "auths#destroy"
 resources :auths, only:[:new, :create]

@@ -11,14 +11,18 @@ class UsersController < ApplicationController
 	def create
 	    @user = User.new(params.require(:user).permit(:username, :password))
 	    if @user.save
+	    			user = User.find_by(username: params[:user][:username])
+		if user != nil && user.authenticated?(params[:user][:password])
+			session[:user_id] = user.id
+			
 	      redirect_to polls_path, notice: "Thank you for signing up!"
+	    end
 	    else
-	      flash[:notice] = "There is an error with your submission. Please make sure that the form is completely filled."
+	      flash[:notice] = "Oops something went wrong. Try again!"
 	      render 'new'
 		end
 	end
 end
-
 
 
 

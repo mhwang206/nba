@@ -6,24 +6,8 @@ $topwidth: 800px;
 $maincolor: #6f6;
 $mainfont: helvetica;
 
-.create_poll {
-	text-align: left;
-}
-
-.logout {
-	text-align: right;
-}
-
-.main {
+body {
 	background-color: #ecf0f1;
-	width: $topwidth / 960px * 100%;
-	height: 1000px;
-	margin: 0 auto;
-	h1 {
-		text-align: center;
-		font-family: $mainfont;
-		padding-top: 20px;
-	}
 }
 
 .welcome_msg {
@@ -37,8 +21,69 @@ $mainfont: helvetica;
 }
 
 .poll {
-	border: 3px solid black;
-	width: 320px;
+	width: 310px;
 	margin: 10px;
 	display: inline-block;
+	background-color: white;
+	border-radius: 3px;
+	box-shadow: 1px 3px 10px 0;
+	text-align: center;
 }
+
+
+.image {
+	
+}
+
+.question {
+	text-align: left;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.answer {
+	text-align: left;
+}
+
+.create_bg {
+	background-image: url("http://fc06.deviantart.net/fs20/f/2007/291/0/2/NBA_Team_Logos_Wallpaper_by_nbafan.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.create_header {
+	text-align: center;
+	color: black;
+	font-size: 30px;
+}
+
+.create_form {
+	border: 3px solid white;
+	width: 600px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.8);
+	background-size: cover;
+	border-radius: 6px;
+	box-shadow: 0 -5px 8px rgba(0, 0, 0, 0.3);
+	top: 50%;
+	left: 50%;
+	width: 675px;
+	min-height: 405px;
+	margin-left: -337px;
+	margin-top: -212px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	position: absolute;
+	z-index: 1;
+}
+
+.create_label {
+	text-align: left;
+}
+
+.create_btn {
+	text-align: center;
+}
+
+
