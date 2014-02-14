@@ -1,6 +1,7 @@
 require 'bcrypt'
 class User
   include Mongoid::Document
+  has_many :polls
 
   # Allow us to hold a plain-text password in memory
   attr_accessor :password
@@ -8,6 +9,7 @@ class User
   field :username, type: String
   field :salt, type: String
   field :hashed_password, type: String
+  field :poll, type: String
 
   validates :username, presence: true
   validates :password, presence: true
@@ -29,5 +31,6 @@ private
   	self.password = nil
   end
 end
+
 
 

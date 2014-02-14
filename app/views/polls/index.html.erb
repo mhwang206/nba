@@ -1,28 +1,54 @@
-	<div class ="welcome_msg">
-	Hello, <%= current_user ? current_user.username : "(not logged in)" %> 
-	</div>
+<div class ="welcome_msg">
+Hello, <%= current_user ? current_user.username : "(not logged in)" %> 
+</div>
 
+<!-- <div x-ng-app x-ng-controller="shoppingListCtrl">
+<a href="#" class="list-group-item" x-ng-click="vote()">click</a>
+</div> -->
 
-	<% @polls.each do |f| %>
+<!-- <h1 id="id1">My Heading 1</h1> -->
+
+<% @polls.each do |f| %>
 		<div class="poll">
+			<%= link_to(poll_path(f)) do %>
 			<span class="image"><%= image_tag(f.image_url, size: '310x178') %><span>
 			<br>
 			<div class="question"><%= f.question %></div>
 			<br>
+			<% end %>
 			<div class="answer">
-				<input id="accept" name="accept" type="checkbox" value="1" />
-				<button type="button" class="btn btn-warning"><%= f.choice_one %></button>
-				<input id="accept" name="accept" type="checkbox" value="1" />
-				<button type="button" class="btn btn-warning"><%= f.choice_two %></button>
-				<br>
-			</div>
-			<div>
-				<%= link_to "Edit", edit_poll_path(f) %>
+				<a id="id1" href="#" class="list-group-item" onclick="document.getElementById('id1').style.color='red' "><%= f.choice_one %></a>
+				<a href="#" class="list-group-item" ><%= f.choice_two %></a>
 			</div>
 
-				<%= link_to "delete", f, {method: :delete, confirm: "Are you sure?"} %>
+				<% if (f.creator == current_user.username)%>
+				<p class="modify"><%= link_to "Edit", edit_poll_path(f) %></p>
+				<p class="modify"><%= link_to "Delete", f, {method: :delete, confirm: "Are you sure?"} %></p>
+				<% end %>	
+				by <%= f.creator %>
 		</div>
-	<% end %>
+<% end %>
+
+<!-- <div x-ng-app x-ng-controller="shoppingListCtrl">
+		<input type="search" placeholder="Find" x-ng-model="search.$"/>
+		<input type="search" placeholder="by name" x-ng-model="search.name"/>
+		<input type="search" placeholder="by category" x-ng-model="search.category"/>
+		<input type="search" placeholder="by price" x-ng-model="search.price"/>
+
+		<table>
+			<tr>
+				<th x-ng-click="propName= 'name'; rev = !rev;">Name</th>
+				<th x-ng-click="propCategory = 'category' ">Category</th>
+				<th>Price</th>
+				
+			</tr>
+			<tr x-ng-repeat="item in shoppingList | filter: search | orderBy:propName:rev">
+				<td>{{item.name}}</td>
+				<td>{{item.category}}</td>
+				<td class="price">{{item.price | currency}}</td>
+			</tr>
+		</table>
+</div> -->
 
 
 

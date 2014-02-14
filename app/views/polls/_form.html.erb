@@ -1,7 +1,14 @@
 <div class = "create_form">
 	<div class="create_header">Create a Poll</div>
 <%= form_for @poll do |f| %>
+by: <%= current_user.username %> 
+<br/>
 <div>
+
+	<div class="create_label">
+		<%= f.hidden_field :creator, value: current_user.username%>
+	</div>
+
 	<div class="create_label">
 		<span ><%= f.label :Question %></span>
 		<%= f.text_field :question, :placeholder => "Enter your question here...", :class => "form-control"%>

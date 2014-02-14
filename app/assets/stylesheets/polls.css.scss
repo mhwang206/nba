@@ -7,7 +7,9 @@ $maincolor: #6f6;
 $mainfont: helvetica;
 
 body {
-	background-color: #ecf0f1;
+	background-color: #bdc3c7;
+	// background-image: url("http://images8.alphacoders.com/370/370799.jpg");
+	// background-size: cover !important;
 }
 
 .welcome_msg {
@@ -84,6 +86,13 @@ body {
 
 .create_btn {
 	text-align: center;
+}
+
+.modify {
+	float: right;
+	text-align: center;
+	margin-right: 10px;
+
 }
 
 

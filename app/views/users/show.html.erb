@@ -1,0 +1,12 @@
+<h1><%= current_user.username %>'s Polls</h1>
+
+<% @polls.each do |f| %>
+	<div class="poll">
+		<%= image_tag(f.image_url, size: '310x178')%> <br/>
+		Question: <%= f.question %> <br/>
+		Answer: <%= f.choice_one %> <br/>
+		Answer: <%= f.choice_two %> <br/>
+		<p class="modify"><%= link_to "Edit", edit_poll_path(f) %></p>
+		<p class="modify"><%= link_to "Delete", f, {method: :delete, confirm: "Are you sure?"} %></p>
+	</div>
+<% end %>

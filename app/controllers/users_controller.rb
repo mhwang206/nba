@@ -25,10 +25,12 @@ class UsersController < ApplicationController
 	      render 'new'
 			end
 	end #create
-end #class
 
-
-
+	def show
+		@user = User.find(params[:id])
+		@polls = @user.polls
+	end
+end
 
 	# def create
 	# 	User.create(params.require(:user).permit(:username, :password))

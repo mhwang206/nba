@@ -19,6 +19,7 @@ class PollsController < ApplicationController
 
   def create 
   	@poll = Poll.new(poll_params)
+    current_user.polls << @poll 
     if @poll.save 
   	redirect_to action: 'index'
     else
@@ -47,12 +48,9 @@ class PollsController < ApplicationController
   end
 
 
-
-
-
   private 
 
   def poll_params
-    params.require(:poll).permit(:question, :image_url, :choice_one, :choice_two)
+    params.require(:poll).permit(:creator, :question, :image_url, :choice_one, :choice_two)
   end
 end
